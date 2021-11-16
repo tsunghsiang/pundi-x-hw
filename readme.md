@@ -4,14 +4,18 @@ The project aims to publish a NFT token named by the author's name. We are going
 
 ## Prerequisites
 - **Development Environment**
+
     To organize a simple project structure as well as to handle dependency issues with convenience, I strongly recommend that you install [```vscode```](https://code.visualstudio.com/), [```node```](https://nodejs.org/en/) and [```solidity plugin```](https://marketplace.visualstudio.com/items?itemName=JuanBlanco.solidity).
 
-    Firstly we need to create a basic npm project with a command below; corresponding configuration file [```package.json```](./package.json) would be created under the project.
-    ```command
+    Firstly we need to create a basic npm project with a command below, and corresponding configuration file [```package.json```](./package.json) would be created under the project.
+    
+	```command
     npm init -y
     ```
-    Then we install [```hardhat```](https://hardhat.org/getting-started/) as a tool to to compile, deploy, test, and debug your Ethereum software. Remember to choose ```hardhat.config.js``` for first-created project, we would add some environment variables that is to be stated later to simplify the testing processes.
-    ```command
+    
+	Then we install [```hardhat```](https://hardhat.org/getting-started/) as a tool to to compile, deploy, test, and debug your Ethereum software. Remember to choose ```hardhat.config.js``` for first-created project, we would add some environment variables that are to be stated later to simplify the testing processes.
+    
+	```command
     npx hardhat
     ```
 	
@@ -20,11 +24,11 @@ The project aims to publish a NFT token named by the author's name. We are going
     
 - **Dependencies**
     
-    To enable local testing instead of constant deployment, [```hardhat```](https://hardhat.org/getting-started/) provides functionality focusing around Solidity debugging, featuring stack traces. Also, we would adopt it to deploy our smart contracts to testnet rathern than complicated manual interaction with Etherscan.
+    To enable local testing instead of constant deployment, [```hardhat```](https://hardhat.org/getting-started/) provides functionality focusing around Solidity debugging, featuring stack traces. Also, we would adopt it to deploy our smart contracts to testnet rather than complicated manual interaction with Etherscan.
     ```command
     npm install --save-dev hardhat
     ```
-    [```@nomiclabs/hardhat-ethers```](https://hardhat.org/plugins/nomiclabs-hardhat-ethers.html) adds an ethers object to the Hardhat Runtime Environment, which allows you to interact with the Ethereum blockchain in a simple way.
+    [```@nomiclabs/hardhat-ethers```](https://hardhat.org/plugins/nomiclabs-hardhat-ethers.html) adds an ```ethers``` object to the Hardhat Runtime Environment, which allows you to interact with the Ethereum blockchain in a simple way.
     ```command
     npm install --save-dev @nomiclabs/hardhat-ethers
     ```
@@ -32,7 +36,7 @@ The project aims to publish a NFT token named by the author's name. We are going
     ```command
     npm install --save-dev @nomiclabs/hardhat-etherscan
     ```
-    [```@nomiclabs/hardhat-waffle```](https://www.npmjs.com/package/@nomiclabs/hardhat-waffle) adds a ```waffle``` object to the Hardhat Runtime Environment. This object has all the Waffle functionality, already adapted to work with Hardhat. And it is adopted to build smart contract tests using Waffle in Hardhat, taking advantage of both.
+    [```@nomiclabs/hardhat-waffle```](https://www.npmjs.com/package/@nomiclabs/hardhat-waffle) adds a ```waffle``` object to the Hardhat Runtime Environment. This object has all the Waffle functionalities, already adapted to work with Hardhat. And it is adopted to build smart contract tests using Waffle in Hardhat, taking advantage of both.
     ```command
     npm install --save-dev @nomiclabs/hardhat-waffle
     ```
@@ -91,7 +95,7 @@ The project aims to publish a NFT token named by the author's name. We are going
     
     **-- [```package.json```](./package.json)**
 	
-    Let's get deeper into the configurations of the project. In the beginning, [```package.json```](./package.json) is investigated to know how do we build the solidity code, test, and deploy the smart contract into testnet.
+    Let's get deeper into the configurations of the project. In the beginning, [```package.json```](./package.json) is investigated to know how do we build the solidity code, test, and deploy the smart contract into the testnet.
     ```json
     "scripts": {
         "build": "hardhat compile",
@@ -114,8 +118,10 @@ The project aims to publish a NFT token named by the author's name. We are going
     PRIVATE_KEY="{wallet private key}"
     ```
     To get an etherscan api key, please create an [etherscan account](https://etherscan.io/login) and follow the [post](https://medium.com/etherscan-blog/psa-for-developers-implementation-of-api-key-requirements-starting-from-february-15th-2020-b616870f3746) to get an api key for the application.
-    To get an alchemy api key, please create an [alchemy account](https://auth.alchemyapi.io/?redirectUrl=https%3A%2F%2Fdashboard.alchemyapi.io) and follow the [post](https://docs.alchemy.com/alchemy/introduction/getting-started) to get an api key for the application.
-    To get a private key, please apply for a crypto wallet (ex: [MetaMask](https://metamask.io/)) and follow the [post](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key) to export your own private key.
+    
+	To get an alchemy api key, please create an [alchemy account](https://auth.alchemyapi.io/?redirectUrl=https%3A%2F%2Fdashboard.alchemyapi.io) and follow the [post](https://docs.alchemy.com/alchemy/introduction/getting-started) to get an api key for the application.
+    
+	To get a private key, please apply for a crypto wallet (ex: [MetaMask](https://metamask.io/)) and follow the [post](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key) to export your own private key.
     
     **-- [hardhat.config.js](./hardhat.config.js)**
 	
@@ -202,7 +208,7 @@ Also, we can check deployment status on testnet [ropsten](https://ropsten.ethers
 
 ## Verify Code on Etherscan
 
-In the configuration file [package.json](./package.json), the field ```etherscan``` property has been filled with secret key. We are going to verify contract services with the aid of the plugin [hardhat-etherscan](https://hardhat.org/). Anyone could consullt the [page](https://hardhat.org/plugins/nomiclabs-hardhat-etherscan.html) for details.
+In the configuration file [package.json](./package.json), the field ```etherscan``` property has been filled with a secret key. We are going to verify contract services with the aid of the plugin [hardhat-etherscan](https://hardhat.org/). Anyone could consullt the [page](https://hardhat.org/plugins/nomiclabs-hardhat-etherscan.html) for details.
 
 From the last section, we have known the deployed contract address. Therefore when we would like to verify contract services, please type the command as below:
 ```command
@@ -238,11 +244,11 @@ When the contract service is verified a link is given so that you can open it; r
 
 ![test-case-4](./imgs/test-case-4.png)
 
-**Case [5]**: mint function should be reverted since all transactions has been paused in case [4]
+**Case [5]**: mint function should be reverted since all transactions have been paused in case [4]
 
 ![test-case-5](./imgs/test-case-5.png)
 
-**Case [6]**: burn function should be reverted since all transactions has been paused in case [4]
+**Case [6]**: burn function should be reverted since all transactions have been paused in case [4]
 
 ![test-case-6](./imgs/test-case-6.png)
 
@@ -250,7 +256,7 @@ When the contract service is verified a link is given so that you can open it; r
 
 ![test-case-7](./imgs/test-case-7.png)
 
-The all transactions of the deployed contract address are listed here corresponding to the above use cases.
+All transactions of the deployed contract address are listed here corresponding to the above use cases.
 
 ![tx-records](./imgs/tx-records.png)
 
