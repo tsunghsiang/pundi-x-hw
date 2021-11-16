@@ -15,7 +15,7 @@ The project aims to publish a NFT token named by the author's name. We are going
     npx hardhat
     ```
     
-    ![hardhat-installation](./imgs/install-hardhat.png)
+    ![install-hardhat](./imgs/install-hardhat.png)
     
     
 - **Dependencies**
@@ -172,6 +172,7 @@ The source code is under the directory [constracts](./contracts), to compile the
 npm run build
 ```
 Note that the command would trigger the ```build``` field of ```scripts``` property in [```package.json```](./package.json) so that ```hardhat``` plugin compiles the source. The result is shown as below:
+
 ![solidity-compile](./imgs/solidity-compile.png)
 
 Identically, test scripts are placed under the directory [test](./test), to test the use cases just type the command below:
@@ -179,6 +180,7 @@ Identically, test scripts are placed under the directory [test](./test), to test
 npm run test
 ```
 Note that the command would trigger the ```test``` field of ```scripts``` property in [```package.json```](./package.json) so that ```hardhat``` plugin validates the source. The result is shown as below:
+
 ![test-result](./imgs/test-result.png)
 
 ## Deploy a Token
