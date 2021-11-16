@@ -14,8 +14,8 @@ The project aims to publish a NFT token named by the author's name. We are going
     ```command
     npx hardhat
     ```
-    
-    ![install-hardhat](./imgs/install-hardhat.png)
+	
+	![install-hardhat](./imgs/install-hardhat.png)
     
     
 - **Dependencies**
